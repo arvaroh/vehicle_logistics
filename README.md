@@ -75,6 +75,6 @@ To launch your app's tests, run:
 #### 5.2 Checking API through Swagger API Documentation
 The app must be launched. Open address in a browser:
 
-    http://localhost:8080/wehicle/swagger
+    http://localhost:8080/vehicle/swagger
     
 Choose the controller and the method for checking.
