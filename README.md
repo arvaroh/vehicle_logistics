@@ -1,6 +1,6 @@
 # Vehicle Logistics Service
 
-##1. Preconditions
+## 1. Preconditions
 Vehicle geolocation
 
 There is a large amount of vehicles (millions).
@@ -10,11 +10,11 @@ The task is to create a RESTful web service that will:
 - Receive current coordinates from vehicle GPS trackers;
 - On request return the list of vehicles that are located within a given rectangle on the map. The rectangle coordinates are provided as the request params.
 
-#####1.a Assumption for development:
+##### 1.a Assumption for development:
 A vehicle can be identified by its vehicleId, which is an integer from 1 to max_int;
 Coordinates are decimal values in range -90...90 for latitude and -180...180 for longitude.
 
-##2. Technical description of the solution
+## 2. Technical description of the solution
 
 API-first approach is implemented in this project. 
 API is described in the file with path "src/main/resources/swagger/api.yml". 
@@ -26,18 +26,18 @@ Interaction between controller and repository goes through the service layer.
 Tests are included in the project.
 API documenting is implemented with Swagger help.
 
-##3. Deployment
+## 3. Deployment
 PostgreSQL DB with name "vehicle_logistics" and credentials: "username: vehicle_admin" and "password: test12345" must be created before project building.
 
-####3.1 Building of app
+#### 3.1 Building of app
 
     mvn clean package -DskipTests
     
-####3.2 Launch of app
+#### 3.2 Launch of app
 
     java -jar vehiclelogistics-0.0.1-SNAPSHOT.jar  
     
-##4. Using
+## 4. Using
 - Receive current coordinates from vehicle GPS trackers:
 
 It is POST request to URL:
@@ -66,13 +66,13 @@ curl:
     
     curl -X GET "http://localhost:8080/vehicle/vehicles?bottomLatitude=0&leftLongitude=0&rightLongitude=50&topLatitude=50" -H  "accept: application/json"
     
-##5. Testing
-####5.1 Unit tests
+## 5. Testing
+#### 5.1 Unit tests
 To launch your app's tests, run:
 
     mvn clean test
     
-####5.2 Checking API through Swagger API Documentation
+#### 5.2 Checking API through Swagger API Documentation
 The app must be launched. Open address in a browser:
 
     http://localhost:8080/wehicle/swagger
